@@ -18,7 +18,6 @@ public class ForwardHandler implements Listener {
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onPluginMessageRcv(PluginMessageEvent event) {
-        System.out.println("Received msg with " + event.getTag());
         if (event.getTag().equals("legacy:forward")) {
             ByteArrayDataInput input = ByteStreams.newDataInput(event.getData());
             String targetServer = input.readUTF();
